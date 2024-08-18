@@ -1,0 +1,96 @@
+
+$white:    #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900:  #2e2e2f !default;
+$gray-1000: #1E1E1E !default;
+$black:    #000 !default;
+$primary-black: #151515 !default;
+$blue:     #0d6efd !default;
+$violet:    #6E56E0 !default;
+$indigo:  #6610f2 !default;
+$purple:  #6f42c1 !default;
+$pink:    #d63384 !default;
+$red:     #dc3545 !default;
+$orange:  #fd7e14 !default;
+$yellow:  #ffc107 !default;
+$green:   #198754 !default;
+$teal:    #20c997 !default;
+$cyan:    #0dcaf0 !default;
+
+$colors: (
+  "blue":       $blue,
+  "indigo":     $indigo,
+  "purple":     $purple,
+  "pink":       $pink,
+  "red":        $red,
+  "orange":     $orange,
+  "yellow":     $yellow,
+  "green":      $green,
+  "teal":       $teal,
+  "cyan":       $cyan,
+  "black":      $black,
+  "white":      $white,
+  "gray":       $gray-600,
+  "gray-dark":  $gray-800
+) !default;
+
+
+$primary:       $blue !default;
+$secondary:     $gray-600 !default;
+$success:       $green !default;
+$info:          $cyan !default;
+$warning:       $yellow !default;
+$danger:        $red !default;
+$light:         $gray-100 !default;
+$dark:          $gray-900 !default;
+
+// ----------------------------------------------
+// Sidebar
+// ----------------------------------------------
+$sidebar-text: $dark;
+$sidebar-width-full: 250px;
+$sidebar-width-iconbar: 180px;
+$sidebar-width-mini: 87px;
+$sidebar-spacing-x: 0 24px;
+
+// ----------------------------------------------
+// Border
+// ----------------------------------------------
+
+$border-radius:               .375rem !default;
+$border-radius-sm:            .25rem !default;
+$border-radius-lg:            .5rem !default;
+$border-radius-xl:            1rem !default;
+$border-radius-2xl:           2rem !default;
+$border-color:                $gray-900;
+$border-line:                 1px solid $border-color;
+
+// ----------------------------------------------
+// Header
+// ----------------------------------------------
+
+$header-height: 72px;
+$navlink-padding: 8px 16px;
+// $header-shadow: 1px 0px 20px 0px rgb(0 0 0 / 12%);
+
+$font-weight-lighter:         lighter !default;
+$font-weight-light:           300 !default;
+$font-weight-normal:          400 !default;
+$font-weight-medium:          500 !default;
+$font-weight-semibold:        600 !default;
+$font-weight-bold:            700 !default;
+$font-weight-bolder:          bolder !default;
+
+$link-disabled: 0.38;
+
+$icon-color: $gray-600;
+
+$text-title-size-md:             25px;
+$text-title-size-lg:             30px;

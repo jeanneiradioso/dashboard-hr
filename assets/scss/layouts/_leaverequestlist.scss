@@ -1,0 +1,162 @@
+@import "../variables";
+
+.btn-group-toggle {
+    button {
+        background-color: $gray-1000;
+        color: $gray-600;
+        background-color: #1E1E1E;
+        color: #6c757d;
+        padding: 12px 30px;
+        cursor: pointer;
+        border: none;
+
+        &.active {
+            background-color: $violet;
+            color: $white;
+        }
+    }
+
+    button:first-child {
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+    }
+
+    button:last-child {
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+}
+
+.leave-requests-list {
+    margin-top: 5px;
+
+    &-menu {
+        display: flex;
+        gap: 30px;
+
+        &-item {
+            cursor: pointer;
+            padding: 0 5px 10px 5px;
+
+            &.active {
+                border-bottom: 3px solid $violet;
+            }
+        }
+    }
+
+    &-control {
+        display: flex;
+        gap: 25px;
+    }
+
+    &-table {
+        overflow: auto;
+        table {
+            width: 100%;
+        }
+
+        td,
+        th {
+            padding: 0px;
+        }
+        td:first-child,  th:first-child, td:nth-child(4),  th:nth-child(4) {
+            min-width: 120px;
+        }
+        td:nth-child(2),  th:nth-child(2), td:nth-child(3),  th:nth-child(3),  td:nth-child(5),  th:nth-child(5) {
+            min-width: 200px;
+        }
+
+        td:nth-child(6),  th:nth-child(6) {
+            min-width: 230px;
+        }
+
+        &-header {
+            .table-header-container {
+                background-color: #2c2c2c;
+                text-align: start;
+                height: 25px;
+                padding: 15px;
+            }
+
+            th:first-child {
+                .table-header-container {
+                    border-top-left-radius: 8px;
+                    border-bottom-left-radius: 8px;
+                    display: flex;
+                    gap: 20px;
+                }
+            }
+
+            th:last-child {
+                .table-header-container {
+                    border-top-right-radius: 8px;
+                    border-bottom-right-radius: 8px;
+                }
+            }
+        }
+
+        &-item {
+            td {
+                color: $white;
+            }
+
+            td:last-child {
+                i {
+                    font-size: 28px;
+                }
+            }
+
+            .table-item-container {
+                border-bottom: $border-line;
+                height: 45px;
+                display: grid;
+                align-items: center;
+                padding: 25px 15px;
+
+                &-user {
+                    display: flex;
+                    gap: 10px;
+
+                    p {
+                        padding-top: 10px;
+                    }
+                }
+
+                &-actions {
+                    button:first-child {
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
+    }
+
+    &-pagination {
+        padding-top: 15px;
+    }
+}
+
+.leave-requests-details {
+    &-item {
+        padding: 10px 0;
+        .user-name {
+            margin-left: 20px;
+            padding-top: 10px;
+        }
+
+        .new {
+            border-top: 3px solid $yellow;
+        }
+    
+        .active {
+            background-color: #171616;
+        }
+    }
+
+    &-item:first-child {
+        margin-top: 20px;
+    }
+
+    
+
+}

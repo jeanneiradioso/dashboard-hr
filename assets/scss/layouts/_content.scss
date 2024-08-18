@@ -1,0 +1,150 @@
+@import "../variables";
+
+.main {
+    position: relative;
+    padding: 30px 40px;
+    &-header {
+        position: sticky;
+        &-menu {
+            display: flex;
+            gap: 30px;
+            overflow: auto;
+
+            &-item {
+                color: $gray-600;
+                font-size: 16px;
+                padding-bottom: 10px;
+                position: relative;
+                padding-top: 12px;
+                cursor: pointer;
+
+                i {
+                    font-size: 22px;
+                }
+
+                &.active {
+                    border-bottom: 3px solid $violet;
+                    color: $white;
+                }
+
+                &.notif {
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        top: 0px;
+                        right: -4px;
+                        width: 5px;
+                        height: 5px;
+                        border-radius: 100%;
+                        background: $yellow;
+                    }
+                }
+            }
+        }
+    }
+
+    &-content {
+        padding: 20px 0;
+        overflow: auto;
+        max-height: calc(100vh - 240px);
+        .text-title-lg {
+            color: $white;
+            margin-bottom: 10px;
+        }
+
+        &-dashboard {
+            .card-content {
+                min-height: 280px;
+            }
+            .dates-dp {
+                gap: 25px;
+                justify-content: end;
+            }
+            .days-of-week-container {
+                overflow: auto;
+            }
+            .days-of-week {
+                display: flex;
+                flex-wrap: wrap;
+                border: $border-line;
+                border-radius: 8px;
+               
+                .day {
+                    width: 14%;
+                    border-right: $border-line;
+                    &-label {
+                        padding: 10px;
+                        text-align: center;
+                        color: $white;
+
+                        &.active {
+                            background-color: $red;
+                        }
+                    }
+                }
+
+                .day:last-child {
+                    border-right: none;
+                }
+            }
+
+            .leaves-heatmap {
+                margin-top: 10px;
+                &-item {
+                    padding: 15px;
+                    position: relative;
+                    height: 185px;
+                    text-align: center;
+                }
+
+                &-progress {
+                    position: absolute;
+                    top: 55px;
+                    left: calc(50% - 50px);
+                }
+            }
+
+            .user-list {
+                margin-bottom: 20px;
+                &-profile {
+                    display: flex;
+                    span {
+                        padding-left: 10px;
+                        font-weight: bolder;
+                        padding-top: 5px;
+                    }
+                }
+
+                &-leaves {
+                    padding-right: 10px;
+                    display: flex;
+                    justify-content: end;
+                    color: $white;
+                    font-size: 14px;
+                    padding-top: 5px;
+                }
+            }
+        }
+
+        &-leave-requests {
+            margin-top: 20px;
+        }
+    }
+
+    &-container-overlap {
+        position: absolute;
+        width: 520px;
+        top: 0;
+        background-color: $primary-black;
+        right: -14px;
+        z-index: 1111111;
+        height: calc(100vh - 88px);
+        box-shadow: -25px 0px 20px -20px rgba(0,0,0,0.45);
+        border-left: $border-line;
+    }
+
+    &-container-overlap.hidden {
+        visibility: hidden;
+    }
+    
+}

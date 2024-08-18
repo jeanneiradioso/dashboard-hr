@@ -1,0 +1,98 @@
+// VARiABLES
+// desktop flex
+$flex-desktop-columns: 12;
+$flex-desktop-sideMargin: 0px;
+$flex-desktop-gutter: 40px;
+$flex-desktop-breakpoint: 1400px;
+
+// tablet flex
+$flex-tablet-columns: 12;
+$flex-tablet-sideMargin: 0px;
+$flex-tablet-gutter: 30px;
+$flex-tablet-breakpoint: 1020px;
+
+// mobile flex
+$flex-mobile-columns: 4;
+$flex-mobile-sideMargin: 0px;
+$flex-mobile-gutter: 20px;
+$flex-mobile-breakpoint: 620px;
+
+// pixels to % variables
+$desk-flex-width: 100% -
+  (($flex-desktop-sideMargin * 2 / $flex-desktop-breakpoint) * 100%);
+$tab-flex-width: 100% -
+  (($flex-tablet-sideMargin * 2 / $flex-tablet-breakpoint) * 100%);
+$mob-flex-width: 100% -
+  (($flex-mobile-sideMargin * 2 / $flex-mobile-breakpoint) * 100%);
+
+$desk-gutter: (
+  (
+      $flex-desktop-gutter /
+        ($flex-desktop-breakpoint - ($flex-desktop-sideMargin * 2))
+    ) * 100%
+);
+$tab-gutter: (
+  (
+      $flex-tablet-gutter /
+        ($flex-tablet-breakpoint - ($flex-tablet-sideMargin * 2))
+    ) * 100%
+);
+$mob-gutter: (
+  (
+      $flex-mobile-gutter /
+        ($flex-mobile-breakpoint - ($flex-mobile-sideMargin * 2))
+    ) * 100%
+);
+
+// FUNCTIONS AND MiXINS
+@function col-width($i, $columns) {
+  @return 100% / $columns * $i;
+}
+
+@mixin col-props($i, $columns, $gutter) {
+  box-sizing: border-box;
+  width: col-width($i, $columns);
+}
+
+@mixin columns-loop($name, $columns, $gutter) {
+  @for $i from 0 through $columns {
+    &-#{$name}-#{$i} {
+      @include col-props($i, $columns, $gutter);
+    }
+    &-#{$name}-shift-#{$i} {
+      margin-left: col-width($i, $columns);
+    }
+  }
+}
+
+@mixin flex-base($width) {
+  box-sizing: border-box;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  flex-wrap: wrap;
+}
+
+// CLASSES
+.flex {
+  @include flex-base($desk-flex-width);
+  @media screen and (max-width: $flex-tablet-breakpoint) {
+    width: $tab-flex-width;
+  }
+  @media screen and (max-width: $flex-mobile-breakpoint) {
+    width: $mob-flex-width !important;
+  }
+  &-0 {
+    @include flex-base(100%);
+  }
+}
+
+.col {
+  @include columns-loop(desk, $flex-desktop-columns, $desk-gutter);
+  @media screen and (max-width: $flex-tablet-breakpoint) {
+    @include columns-loop(tab, $flex-tablet-columns, $tab-gutter);
+  }
+  @media screen and (max-width: $flex-mobile-breakpoint) {
+    @include columns-loop(mob, $flex-mobile-columns, $mob-gutter);
+  }
+}

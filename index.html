@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HRHR</title>
+  <link rel="shortcut icon" type="image/png" href="../assets/images/logos/favicon.png" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <script src="components/sidebar.js" type="text/javascript" defer></script>
+  <script src="components/header.js" type="text/javascript" defer></script>
+  <script src="components/circularProgress.js" type="text/javascript" defer></script>
+  <script src="components/dashboard.js" type="text/javascript" defer></script>
+  <script src="components/leaveRequestList.js" type="text/javascript" defer></script>
+  <script src="components/notifications.js" type="text/javascript" defer></script>
+</head>
+
+<body>
+  <div class="page-wrapper grid-container" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6"
+    data-sidebartype="full" data-sidebar-position="fixed" data-header-position="fixed">
+    <div class="flex">
+      <header-component class="col-desk-12"></header-component>
+    </div>
+    <div class="flex">
+      <div class="col-desk-2 col-mob-0" style="width: 15.666667%;">
+        <sidebar-component></sidebar-component>
+      </div>
+      <div class="col-desk-10 col-mob-4">
+        <div class="main">
+          <div class="main-header">
+            <div class="main-header-menu">
+              <div class="main-header-menu-item active notif">
+                Leave Management
+              </div>
+              <div class="main-header-menu-item">
+                Leave Requests
+              </div>
+              <div class="main-header-menu-item">
+                Leave Types
+              </div>
+              <div class="main-header-menu-item notif">
+                Leave Calendar
+              </div>
+              <div class="main-header-menu-item">
+                Leave Report
+              </div>
+              <div class="main-header-menu-item">
+                Leave Approver
+              </div>
+              <div class="main-header-menu-item">
+                <i class="i i-setting-linear"></i>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="main-content">
+            <dashboard-component></dashboard-component>
+            <leave-request-list-component></leave-request-list-component>
+          </div>
+
+          <div id="notifComponent" class="main-container-overlap hidden">
+            <notifications-component ></notifications-component>
+          </div>
+        </div>
+      </div>
+
+    </div>
+</body>
+
+</html>

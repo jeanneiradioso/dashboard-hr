@@ -1,0 +1,57 @@
+@import "../variables";
+
+.notifications {
+    padding: 20px;
+    color: $gray-600;
+
+    .text-title-lg {
+        color: $white;
+    }
+
+    .mark {
+        cursor: pointer;
+    }
+
+    &-list {
+        margin-top: 30px;
+        &-item {
+            padding: 20px;
+            background-color: $gray-1000;
+            border-radius: 12px;
+            display: flex;
+            gap: 20px;
+            position: relative;
+            margin: 10px 0;
+            
+            .user {
+                margin-left: 10px;
+            }
+
+            .date-text {
+                color: $gray-500;
+                margin-top: 20px;
+            }
+
+            &-status {
+                content: '';
+                width: 8px;
+                height: 8px;
+                border-radius: 100%;
+                background-color: $warning;
+                position: absolute;
+            }
+        }
+
+        &-item.old-notif {
+            .notifications-list-item-status {
+                display: none;
+            }
+
+            .notifications-list-item-details {
+                p:first-child {
+                    color: $gray-700;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,81 @@
+@font-face {
+    font-family: 'icon';
+    src: url('../fonts/icon.svg') format('svg'),
+        url('../fonts/icon.woff') format('woff'),
+        url('../fonts/icon.eot') format('eot'),
+        url('../fonts/icon.ttf') format('ttf');
+}
+
+/* base class */
+.i {
+    display: inline-block;
+    font: normal normal normal 1em/1 'icon';
+    color: inherit;
+    flex-shrink: 0;
+    line-height: 1;
+    max-width: initial;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    &-calendar-bold::before {
+        content: "\e900";
+    }
+    &-people-bold::before {
+        content: "\e904";
+    }
+
+    &-profile-bold::before {
+        content: "\e908";
+    }
+    &-medal-star-bold::before {
+        content: "\e901";
+    }
+    &-message-question-bold::before {
+        content: "\e902";
+    }
+    &-money-bold::before {
+        content: "\e903";
+    }
+    &-chart-bold::before {
+        content: "\e905";
+    }
+    &-monitor-bold::before {
+        content: "\e906";
+    }
+    &-org-bold::before {
+        content: "\e907";
+    }
+    &-grid-bold::before {
+        content: "\e909";
+    }
+    &-clock-outline::before {
+        content: "\e90a";
+    }
+    &-arrow-swap-horizontal::before {
+        content: "\e90b";
+    }
+    &-setting-linear::before {
+        content: "\e90c";
+    }
+    &-a-logo::before {
+        content: "\e90d";
+    }
+    &-arrow-down::before {
+        content: "\e90e";
+    }
+    &-arrow-left::before {
+        content: "\e90f";
+    }
+    &-arrow-right-thin::before {
+        content: "\e910";
+    }
+    &-search::before {
+        content: "\e911";
+    }
+    &-arrow-right::before {
+        content: "\e912";
+    }
+    &-notif-outline::before {
+        content: "\e913";
+    }
+}

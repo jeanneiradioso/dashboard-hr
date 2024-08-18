@@ -1,0 +1,119 @@
+@import "../variables";
+.header {
+    height: fit-content;
+    border: $border-line;
+    align-items: center;
+    max-width: inherit !important;
+    padding: 10px;
+    &-side-logo {
+        height: 65px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        width: $sidebar-width-full;
+        a {
+            width: 75%;
+            img {
+                width: 150px;
+                height: 50px;
+            }
+        }
+        i {
+            color: $gray-600;
+            font-size: 22px;
+            padding-top: 5px;
+        }
+    }
+
+
+    &-logo {
+        padding-left: 30px;
+        color: $white;
+        align-items: center;
+        display: flex;
+        i {
+            font-size: 25px;
+            margin-right: 10px;
+        }
+    }
+
+    &-side {
+        &-container {
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            flex-wrap: wrap;
+            gap: 25px;
+
+            i {
+                font-size: 25px;
+                color: $icon-color;
+            }
+        }
+       
+
+        &-search {
+            background-color: $gray-1000;
+            padding: 6px;
+            border-radius: 25px;
+            width: auto;
+            position: relative;
+            i {
+                padding-left: 10px;
+                color: $gray-600;
+                font-size: 20px;
+                vertical-align: sub;
+                position: absolute;
+            }
+
+            input {
+                background-color: $gray-1000;
+                border: none;
+                color: $gray-600;
+                padding: 5px;
+                padding-left: 45px;
+                width: 250px;
+            }
+
+            input:focus {
+                outline: none;
+            }
+        }
+
+        &-notification {
+            position: relative;
+            background-color: transparent;
+            width: 50px;
+            height: 50px;
+            border-radius: 100%;
+            text-align: center;
+            cursor: pointer;
+            .notif-alert {
+                content: "";
+                position: absolute;
+                top: 12px;
+                 right: 16px;
+                width: 8px;
+                height: 8px;
+                border-radius: 100%;
+                background: $yellow;
+            }
+
+            i {
+                margin-top: 10px;
+            }
+        }
+
+        &-notification.active {
+            background-color: $violet;
+            i {
+                color: $white;
+            }
+        }
+
+        &-user {
+            margin-right: 30px;
+        }
+
+    }
+}
