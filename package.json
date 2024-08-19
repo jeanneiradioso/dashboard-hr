@@ -1,6 +1,6 @@
 {
   "name": "dashboard-hr",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "scripts": {
     "watch:scss": "node-sass -w assets/scss/style.scss assets/css/style.css"
