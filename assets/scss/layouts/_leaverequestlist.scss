@@ -70,6 +70,10 @@
             min-width: 230px;
         }
 
+        a {
+            color: $white;
+        }
+
         &-header {
             .table-header-container {
                 background-color: #2c2c2c;
@@ -136,9 +140,12 @@
     }
 }
 
+
+
 .leave-requests-details {
     &-item {
         padding: 10px 0;
+        font-size: 13px;
         .user-name {
             margin-left: 20px;
             padding-top: 10px;
@@ -157,6 +164,69 @@
         margin-top: 20px;
     }
 
-    
+}
 
+.leave-details-panel {
+    padding: 20px;
+    font-size: 14px;
+    .text-title-lg {
+        color: $white;
+    }
+
+    .card {
+        background-color: $primary-black;
+        margin: 30px 0;
+    }
+
+    table {
+        margin-top: 20px;
+
+        td:first-child,  th:first-child {
+            min-width: 140px;
+        }
+        td:nth-child(2),  th:nth-child(2), td:nth-child(3),  th:nth-child(3) {
+            min-width: 120px;
+        }
+    }
+
+    .bar-level {
+        list-style: none;
+        margin-left: 0;
+        padding-left: 10px;
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+      .bar-level >li {
+        position: relative;
+        padding: 20px;
+      }
+      .bar-level>li:before {
+        content: '\25CF';
+        margin-right: 10px;
+        font-size: 20px;
+        position: absolute;
+        z-index: 1;
+        left: 0;
+      }
+      .bar-level>li.warning:before { 
+        color: $warning;
+      }
+      .bar-level>li.success:before { 
+        color: $green;
+      }
+      .bar-level>li:after {
+        position: absolute;
+        left: 0;
+        top: 0;
+        content: '';
+        border-left: 2px dotted $gray-800;
+        margin-left: 5px;
+        height: 88%;
+      }
+      .bar-level >li:first-of-type:after {
+        top: 40%;
+      }
+      .bar-level >li:last-of-type:after {
+        top: -50%;
+      }
 }

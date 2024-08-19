@@ -133,7 +133,7 @@
 
     &-container-overlap {
         position: absolute;
-        width: 520px;
+        width: 500px;
         top: 0;
         background-color: $primary-black;
         right: -14px;
@@ -141,6 +141,7 @@
         height: calc(100vh - 88px);
         box-shadow: -25px 0px 20px -20px rgba(0,0,0,0.45);
         border-left: $border-line;
+        overflow: auto;
     }
 
     &-container-overlap.hidden {

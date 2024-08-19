@@ -49,7 +49,7 @@ class LeaveRequestList extends HTMLElement {
                 <div class="flex">
                     <div class="col-desk-12">
                     <div class="leave-requests-list-table">
-                        <table cellpadding="0" cellspacing="0" id="employees">
+                        <table cellpadding="0" cellspacing="0" id="employees" class="list-table">
                         <tr class="leave-requests-list-table-header">
                             <th>
                             <div class="table-header-container">
@@ -94,14 +94,14 @@ class LeaveRequestList extends HTMLElement {
                             </div>
                             </th>
                         </tr>
-                        <tr class="leave-requests-list-table-item">
+                        <tr class="leave-requests-list-table-item" id="tableRow">
                             <td>
-                            <div class="table-item-container">
-                                <div class="checkbox-wrapper">
-                                <input id="selectAll" type="checkbox">
-                                <label for="selectAll" class="dot-status warning"></label>
+                                <div class="table-item-container">
+                                    <div class="checkbox-wrapper">
+                                        <input id="selectAll" type="checkbox"/>
+                                        <label for="selectAll" class="dot-status warning"></label>
+                                    </div>
                                 </div>
-                            </div>
                             </td>
                             <td>
                             <div class="table-item-container">
@@ -139,7 +139,7 @@ class LeaveRequestList extends HTMLElement {
                             </td>
                             <td>
                             <div class="table-item-container">
-                                <span><i class="i i-arrow-right-thin"></i></span>
+                            <a href="leave-details.html"> <span><i class="i i-arrow-right-thin"></i></span></a>
                             </div>
                             </td>
                         </tr>
@@ -188,7 +188,7 @@ class LeaveRequestList extends HTMLElement {
                             </td>
                             <td>
                             <div class="table-item-container">
-                                <span><i class="i i-arrow-right-thin"></i></span>
+                                <a href="leave-details.html"> <span><i class="i i-arrow-right-thin"></i></span></a>
                             </div>
                             </td>
                         </tr>
@@ -237,7 +237,7 @@ class LeaveRequestList extends HTMLElement {
                             </td>
                             <td>
                             <div class="table-item-container">
-                                <span><i class="i i-arrow-right-thin"></i></span>
+                                 <a href="leave-details.html"> <span><i class="i i-arrow-right-thin"></i></span></a>
                             </div>
                             </td>
                         </tr>
@@ -271,3 +271,4 @@ class LeaveRequestList extends HTMLElement {
 }
 
 customElements.define('leave-request-list-component', LeaveRequestList);
+

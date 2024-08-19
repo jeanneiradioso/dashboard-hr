@@ -90,7 +90,6 @@
                 border-bottom-right-radius: 25px;
                 background-color: transparent;
                 padding: 12px 30px;
-                color: $white;
                 font-weight: $font-weight-normal;
             }
             
@@ -99,6 +98,7 @@
         &-item.active, &-item.active:hover {
             .nav-link {
                 background-color: $violet;
+                color: $white;
             }
         }
 
