@@ -96,3 +96,18 @@ $mob-gutter: (
     @include columns-loop(mob, $flex-mobile-columns, $mob-gutter);
   }
 }
+
+@media screen and (max-width: $flex-tablet-breakpoint) {
+    .nav-link-label {
+      display: none;
+    }
+
+    .sidebar-container {
+      width: 12% !important;
+    }
+
+    .main-container-overlap {
+      width: 400px;
+    }
+
+}

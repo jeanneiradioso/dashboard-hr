@@ -68,31 +68,32 @@ class Dashboard extends HTMLElement {
                       </div>
                     </div>
                   </div>
-                  <div class="flex leaves-heatmap">
-                    <div class="col-desk-4 col-mob-4 leaves-heatmap-item center">
-                      <div class="leaves-heatmap-label">
-                        <p class="text-md text-title">Sick Leave</p>
+                  <div class="leaves-heatmap">
+                    <div class="flex">
+                      <div class="col-desk-4 col-mob-4 leaves-heatmap-item center">
+                        <div class="leaves-heatmap-label">
+                          <p class="text-md text-title">Sick Leave</p>
+                        </div>
+                        <div class="leaves-heatmap-progress">
+                          <circular-progress-component percentage="100"></circular-progress-component>
+                        </div>
                       </div>
-                      <div class="leaves-heatmap-progress">
-                        <circular-progress-component percentage="100"></circular-progress-component>
+                      <div class="col-desk-4 col-mob-4 leaves-heatmap-item">
+                        <div class="leaves-heatmap-label">
+                          <p class="text-md text-title">Annual Leave</p>
+                        </div>
+                        <div class="leaves-heatmap-progress"> <circular-progress-component
+                            percentage="100"></circular-progress-component></div>
                       </div>
-                    </div>
-                    <div class="col-desk-4 col-mob-4 leaves-heatmap-item">
-                      <div class="leaves-heatmap-label">
-                        <p class="text-md text-title">Annual Leave</p>
+                      <div class="col-desk-4 col-mob-4 leaves-heatmap-item">
+                        <div class="leaves-heatmap-label">
+                          <p class="text-md text-title">Emergency Leave</p>
+                        </div>
+                        <div class="leaves-heatmap-progress"> <circular-progress-component
+                            percentage="100"></circular-progress-component></div>
                       </div>
-                      <div class="leaves-heatmap-progress"> <circular-progress-component
-                          percentage="100"></circular-progress-component></div>
-                    </div>
-                    <div class="col-desk-4 col-mob-4 leaves-heatmap-item">
-                      <div class="leaves-heatmap-label">
-                        <p class="text-md text-title">Emergency Leave</p>
-                      </div>
-                      <div class="leaves-heatmap-progress"> <circular-progress-component
-                          percentage="100"></circular-progress-component></div>
                     </div>
                   </div>
-
                 </div>
                 <div class="card-footer">
                   <p class="text-sm">Most popular day: Friday</p>

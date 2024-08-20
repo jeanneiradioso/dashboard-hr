@@ -7,13 +7,13 @@ class Header extends HTMLElement {
       this.innerHTML = `
             <div class="header flex">
                 <div class="flex col-desk-5 col-mob-4">
-                    <div class="header-side-logo">
+                    <div class="header-side-logo col-desk-5 col-tab-7">
                         <a href="./index.html"  class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
                             <img src="../assets/images/logo.png" width="180"/>
                         </a>
                         <i class="i i-arrow-swap-horizontal"></i>
                     </div>
-                    <div class="header-logo">
+                    <div class="header-logo  col-desk-4 col-tab-5">
                         <i class="i i-a-logo"></i>
                         <span>Menumiz HR</span>
                     </div>

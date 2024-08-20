@@ -2,9 +2,10 @@
 
 .main {
     position: relative;
-    padding: 30px 40px;
+    padding: 20px 10px;
     &-header {
         position: sticky;
+        padding: 20px;
         &-menu {
             display: flex;
             gap: 30px;
@@ -44,7 +45,7 @@
     }
 
     &-content {
-        padding: 20px 0;
+        padding: 20px;
         overflow: auto;
         max-height: calc(100vh - 240px);
         .text-title-lg {
@@ -64,16 +65,16 @@
                 overflow: auto;
             }
             .days-of-week {
-                display: flex;
+                display: inline-flex;
                 flex-wrap: wrap;
                 border: $border-line;
                 border-radius: 8px;
                
                 .day {
-                    width: 14%;
-                    border-right: $border-line;
+                    border: $border-line;
+                    min-width: 73px;
                     &-label {
-                        padding: 10px;
+                        padding: 8px 20px;
                         text-align: center;
                         color: $white;
 
@@ -81,10 +82,6 @@
                             background-color: $red;
                         }
                     }
-                }
-
-                .day:last-child {
-                    border-right: none;
                 }
             }
 
@@ -95,12 +92,7 @@
                     position: relative;
                     height: 185px;
                     text-align: center;
-                }
-
-                &-progress {
-                    position: absolute;
-                    top: 55px;
-                    left: calc(50% - 50px);
+                    min-width: 160px;
                 }
             }
 

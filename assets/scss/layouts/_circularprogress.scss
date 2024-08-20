@@ -1,56 +1,95 @@
-.circular-progress {
-    --size: 100px;
-    --half-size: calc(var(--size) / 2);
-    --stroke-width: 10px;
-    --radius: calc((var(--size) - var(--stroke-width)) / 2);
-    --circumference: calc(var(--radius) * pi * 2);
-    --dash: calc((var(--progress) * var(--circumference)) / 100);
-    animation: progress-animation 5s linear 0s 1 forwards;
-    width: 100px;
-}
+@import "../variables";
 
-text {
-    font-size: 20px;
-}
+// Colors
+$barColor: $violet;
+$overlayColor: #fffde8;
+$dbg: $gray-1000;
+$size: 120px;
 
-.circular-progress circle {
-    cx: var(--half-size);
-    cy: var(--half-size);
-    r: var(--radius);
-    stroke-width: var(--stroke-width);
-    fill: none;
-    stroke-linecap: round;
-}
+$bg: lighten($dbg,5%);
+$bdiam: ($size/4)-10;
 
-.circular-progress circle.bg {
-    stroke: #ddd;
+.progress-radial {
+  display: inline-block;
+  margin: 15px;
+  position: relative;
+  width: $size;
+  height: $size;
+  border-radius: 50%;  
+  background-color: $barColor;
+  &:after {
+    content: '';
+    width: 11.4px;
+    height: 9px;
+    top: 48%;
+    left: 52%;
+    border-radius: 50%;
+    margin-left: -7.5px;
+    margin-top: -7.5px;
+    background: $barColor;
+    position: absolute;
+    z-index: 999;
+  }
+  &:before {
+    content: '';
+    width: 11.5px;
+    height: 9px;
+    top: 51%;
+    left: 49%;
+    border-radius: 50%;
+    margin-left: -9.0px;
+    margin-top: -8.8px;
+    background: $barColor;
+    position: absolute;
+    z-index: 999;
+  }
+  &:after {
+    z-index: 998;
+    box-shadow: none;
+    transform: translate(0,-($size/2)+($bdiam/2));
+    
+  }
+  b:after {
+    color: $overlayColor;
+    text-shadow: 0 1px 2px rgba(0,0,0,.6);
+    position: absolute;
+    font-weight: 900;
+    left: 33%;
+    top: 33%;
+    width: 85%;
+    height: 85%;
+    background-color: $dbg;
+    border-radius: 50%;
+    margin-left: -25.5%;
+    margin-top: -25.5%;
+    text-align: center;
+    line-height: 95px;
+    font-size: 30px;
+  }
 }
-
-.circular-progress circle.fg {
-    transform: rotate(-90deg);
-    transform-origin: var(--half-size) var(--half-size);
-    stroke-dasharray: var(--dash) calc(var(--circumference) - var(--dash));
-    transition: stroke-dasharray 0.3s linear 0s;
-    stroke: $violet;
-}
-
-@property --progress {
-    syntax: "<number>";
-    inherits: false;
-    initial-value: 0;
-}
-
-// FUNCTIONS AND MiXINS
-@function prog($value) {
-    @return $value;
-}
-
-@keyframes progress-animation {
-    from {
-        --progress: 0;
+  
+$step: 1; 
+$loops: round(100 / $step);
+$increment: 360 / $loops;
+$half: round($loops / 2);
+@for $i from 0 through $loops {
+  .progress-#{$i*$step} {
+    &:before {
+      transform: rotate(#{$i*3.6}deg) translate(0,-($size/2)+($bdiam/2));
     }
-
-    to {
-        --progress: 65;
+    b:after {
+      content: '#{$i}%';
     }
+    @if $i < $half {
+      $nextdeg: 90deg + ( $increment * $i );
+      background-image: 
+        linear-gradient(90deg, $bg 50%, transparent 50%, transparent), 
+        linear-gradient($nextdeg, $barColor 50%, $bg 50%, $bg);
+    } @else {
+      $nextdeg: -90deg + ( $increment * ( $i - $half ) );
+      background-image: 
+        linear-gradient($nextdeg, $barColor 50%, transparent 50%, transparent),
+        linear-gradient(270deg, $barColor 50%, $bg 50%, $bg);
+    }
+  }
 }
